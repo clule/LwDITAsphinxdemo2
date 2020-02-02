@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>LwDITA的种类 &#8212; sphinxdemo 1.0.0a1 文档</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="LwDITA工具" href="chap5.html" />
+    <link rel="prev" title="LwDITA设计" href="chap3.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="lwdita">
+<h1>LwDITA的种类<a class="headerlink" href="#lwdita" title="永久链接至标题">¶</a></h1>
+<div class="section" id="xdita">
+<h2>XDITA<a class="headerlink" href="#xdita" title="永久链接至标题">¶</a></h2>
+<p>XDITA是基于XML的LwDITA，也是DITA标准版本的一个子集，并额外增加了新媒体元素类型。</p>
+<p><strong>面向对象：</strong>
+XDITA面向不需要使用DITA标准版全部功能的用户设计。</p>
+<p>XDITA的++潜在用户++包括：</p>
+<ul>
+<li><p>使用XML编辑器工作，但仅使用少量元素和属性的用户</p></li>
+<li><p>希望减少开发、维护样式表成本的部门</p></li>
+<li><p>希望已有的DITA内容兼容Markdown或者HTML5的内容创作者</p>
+<p><strong>举例</strong></p>
+</li>
+</ul>
+<p>XDITA topic（基于DITA标准版元素类型，新增加多媒体元素，如 ++&lt; video &gt;++ 标签）</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="cp">&lt;!DOCTYPE topic PUBLIC &quot;-//OASIS//DTD LIGHTWEIGHT DITA Topic//EN&quot; &quot;lw-topic.dtd&quot;&gt;</span>
+<span class="nt">&lt;topic</span> <span class="na">id=</span><span class="s">&quot;install-and-setup&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>Installing and Setting up Remote Lighting<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;shortdesc&gt;</span>Installation of your lighting kit includes installing the light bulbs
+into light fixtures, preparing the remote control, and programming lighting groups.
+<span class="nt">&lt;/shortdesc&gt;</span>
+<span class="nt">&lt;prolog&gt;</span>
+<span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;author&quot;</span> <span class="na">value=</span><span class="s">&quot;Kevin Lewis&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/prolog&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;section&gt;</span>
+<span class="nt">&lt;title&gt;</span>Steps<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+<span class="nt">&lt;li&gt;&lt;p&gt;</span>Install light bulbs.<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;li&gt;&lt;p&gt;</span>Prepare remote control.<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;li&gt;&lt;p&gt;</span>Program lighting groups.<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;section&gt;</span>
+<span class="nt">&lt;title&gt;</span>Example<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;p&gt;</span>The following video demonstrates a recommended installation:<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;video&gt;</span>
+<span class="nt">&lt;video-poster</span> <span class="na">value=</span><span class="s">&quot;remote-poster.jpg&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;media-controls</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;media-source</span> <span class="na">value=</span><span class="s">&quot;remote.mp4&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/video&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/topic&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="hdita">
+<h2>HDITA<a class="headerlink" href="#hdita" title="永久链接至标题">¶</a></h2>
+<p>HDITA是基于HTML-5的LwDITA，包含定制的属性，其中HTML中一些标签的使用与DITA相互转换。</p>
+<p><strong>面向对象</strong>
+熟悉使用HTML进行结构化内容开发的人员。</p>
+<p>HDITA的++潜在用户++包括:</p>
+<ul>
+<li><p>市场文档写作者，不使用XML编辑器，但能贡献基于DITA的产品信息</p></li>
+<li><p>使用HTML写作工具的软件开发人员</p></li>
+<li><p>想使用移动端设备编辑内容的博主或内容架构师</p></li>
+<li><p>只需编写内容但不想要格式转换过程的文档作者</p></li>
+<li><p>熟悉和偏好HTML5的文档写作者</p>
+<p><strong>举例</strong></p>
+</li>
+</ul>
+<p>HDITA topic（使用与HTML5相同的元素类型和属性，提高复用性和与DITA的兼容性）</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Installing and Setting up Remote Lighting<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">article</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;install-and-setup&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Installing and Setting up Remote Lighting<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Installation of your lighting kit includes installing the light bulbs into
+light fixtures, preparing the remote control, and programming lighting groups.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Steps<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Install light bulbs.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Prepare remote control.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Program lighting groups.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Example<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>The following video demonstrates a recommended installation:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">video</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;remote.mp4&quot;</span> <span class="na">controls</span> <span class="na">poster</span><span class="o">=</span><span class="s">&quot;remote.png&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">data-conref</span><span class="o">=</span><span class="s">&quot;bulbs-to-groups.dita#bulbs-to-groups/assign-disclaimer&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mdita">
+<h2>MDITA<a class="headerlink" href="#mdita" title="永久链接至标题">¶</a></h2>
+<p>MDITA是基于Markdown的LwDITA，包含两种类型：</p>
+<ol class="simple">
+<li><p><strong>核心类型（core profile）：</strong>
+对应GitHub Flavored Markdown（GFM）</p></li>
+<li><p><strong>扩展类型（extended profile）：</strong>
+针对于一些只在特定Markdown格式才中出现的功能，提供更加友好的DITA体验。</p></li>
+</ol>
+<p><strong>面向对象：</strong>
+由于MDITA分为两种类型，它的++潜在用户++也分为两类：</p>
+<p>核心类型MDITA的用户：</p>
+<ul class="simple">
+<li><p>不想使用XML编辑器，但要为基于DITA的产品文档贡献内容的软件开发人员</p></li>
+<li><p>负责API文档应用的开发或者技术写作者，需要将内容与其他技术文档应用共享</p></li>
+<li><p>想要使用移动端（但不支持XML编辑器）编辑的写作者</p></li>
+<li><p>希望内容后期能快速地转换为结构化的内容</p></li>
+<li><p>希望利用DITA重用和发布机制，但不依赖于XML标签的写作者</p></li>
+</ul>
+<p>扩展类型MDITA的用户：</p>
+<ul>
+<li><p>接收文档开发人员Markdown格式文件的内容管理人员</p></li>
+<li><p>想将Markdown文件包含进DITA或者XDITA话题集合中的技术写作人员</p></li>
+<li><p>想要使用移动端（但不支持XML编辑器）编辑的写作者</p>
+<p><strong>举例</strong></p>
+</li>
+</ul>
+<p>MDITA <em>core profile</em></p>
+<p>MDITA核心类型中包含Markdown格式本身包含的信息架构，允许用户使用熟悉的写作方式编辑，例如：• Title；Paragraph；Section title；Ordered list；Unordered list；Link；Image；Preformatted text；Italics；Bold；Table；Code block</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh">#</span> Installing and Setting up Remote Lighting
+Installation of your lighting kit includes installing the light bulbs into light
+fixtures, preparing the remote control, and programming lighting groups.
+<span class="gu">##</span> Suggested Steps
+<span class="k">1.</span> Install light bulbs.
+<span class="k">2.</span> Prepare remote control.
+<span class="k">3.</span> Program lighting groups.
+<span class="gu">##</span> Example
+![<span class="nt">Remote installation example</span>](<span class="na">remote.png</span>)
+</pre></div>
+</div>
+<p><strong>使用LwDITA跨格式创建内容</strong>
+LwDITA支持跨格式的内容共享。作者可以同时使用XDITA，HDITA，MDITA，或DITA 1.3标准版进行创作，然后统一集合发布。除MDITA 核心类型外，用户可以在其他所有格式中使用content references和key reference。
+跨格式内容共享的能力可以用来：</p>
+<ul class="simple">
+<li><p>使用XDITA地图链接XDITA，HDITA，MDITA，或DITA 1.3标准版格式的话题</p></li>
+<li><p>使用XDITA话题重用MDITA话题</p></li>
+<li><p>使用HDITA话题重用MDITA话题</p></li>
+<li><p>使用MDITA扩展类型话题重用HDITA话题</p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">sphinxdemo</a></h1>
+
+
+
+
+
+
+
+
+<h3>导航</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="chap1.html">A Brief Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap2.html">Why Use LwDITA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap3.html">LwDITA设计</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">LwDITA的种类</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#xdita">XDITA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hdita">HDITA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mdita">MDITA</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chap5.html">LwDITA工具</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="chap3.html" title="上一章">LwDITA设计</a></li>
+      <li>Next: <a href="chap5.html" title="下一章">LwDITA工具</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, clule.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/chap4.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>LwDITA设计 &#8212; sphinxdemo 1.0.0a1 文档</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="LwDITA的种类" href="chap4.html" />
+    <link rel="prev" title="Why Use LwDITA" href="chap2.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="lwdita">
+<h1>LwDITA设计<a class="headerlink" href="#lwdita" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>LwDITA的话题组成<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>LwDITA通过精筛，保留了以下文档组成部分：</p>
+<ul class="simple">
+<li><p>Body</p></li>
+<li><p>Cross reference</p></li>
+<li><p>Data</p></li>
+<li><p>Description</p></li>
+<li><p>Figure</p></li>
+<li><p>Footnote</p></li>
+<li><p>Image and alternate text</p></li>
+<li><p>In-line formatting: Bold, italics, underline, subscript, superscript</p></li>
+<li><p>Lists: Definition list, ordered list, unordered list</p></li>
+<li><p>Note</p></li>
+<li><p>Paragraph</p></li>
+<li><p>Phrase</p></li>
+<li><p>Prolog</p></li>
+<li><p>Preformatted text</p></li>
+<li><p>Section</p></li>
+<li><p>Short description</p></li>
+<li><p>Table</p></li>
+<li><p>Title</p></li>
+<li><p>Topic</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>LwDITA的地图组成<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>LwDITA通过精筛，保留了以下地图组成元素：</p>
+<ul class="simple">
+<li><p>Data</p></li>
+<li><p>In-line formatting: Bold, italics, underline, superscript, subscript</p></li>
+<li><p>Key definition</p></li>
+<li><p>Link text</p></li>
+<li><p>Map</p></li>
+<li><p>Navigation title</p></li>
+<li><p>Phrase</p></li>
+<li><p>Topic metadata</p></li>
+<li><p>Topic reference</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>更加严格的模型限制<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>更加严格的模型减少了写作时进行选择时的思考成本，但依赖于一些硬性规定。例如在XDITA和HDITA中，除了description、short description、和title元素之外，所有的文字必须包含在段落标签中，提高信息复用性。在段落中可以出现Bold、Italics、Phrase、Superscript、Subscrip、Underline几种形式。</p>
+<p>DITA 1.3中的标签形式：</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;section&gt;</span>Compatible light bulbs include the following:
+<span class="nt">&lt;ul&gt;</span>
+<span class="nt">&lt;li&gt;</span>Compact Fluorescent<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li&gt;</span>Light Emitting Diode<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div>
+</div>
+<p>对比LwDITA中的有效标签形式：</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;section&gt;</span>
+<span class="nt">&lt;p&gt;</span>Compatible light bulbs include the following:<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+<span class="nt">&lt;li&gt;</span>
+<span class="nt">&lt;p&gt;</span>Compact Fluorescent<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li&gt;</span>
+<span class="nt">&lt;p&gt;</span>Light Emitting Diode<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>多媒体内容<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>LwDITA为<strong>多媒体内容</strong>添加了新的元素类型。 这些元素类型与
+HTML5兼容，接下来也会在DITA 1.3标准版中出现。
+DITA 1.3规范中将‹object›元素类型设置为
+在主题中包含的多媒体内容，与HTML中的‹object›对应。 LwDITA更新了XML到HTML元素类型的对应关系，将原来存在于DITA 1.3中的‹object›和‹param›标签进行细化，整理为以下几个元素类型：</p>
+<ul class="simple">
+<li><p>Audio</p></li>
+<li><p>Autoplay</p></li>
+<li><p>Controls</p></li>
+<li><p>Loop</p></li>
+<li><p>Muted</p></li>
+<li><p>Poster</p></li>
+<li><p>Source</p></li>
+<li><p>Track</p></li>
+<li><p>Video</p></li>
+</ul>
+<p><strong>注：</strong> 多媒体元素不能在MDITA中使用。</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">sphinxdemo</a></h1>
+
+
+
+
+
+
+
+
+<h3>导航</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="chap1.html">A Brief Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap2.html">Why Use LwDITA</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">LwDITA设计</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">LwDITA的话题组成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">LwDITA的地图组成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">更加严格的模型限制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">多媒体内容</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chap4.html">LwDITA的种类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap5.html">LwDITA工具</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="chap2.html" title="上一章">Why Use LwDITA</a></li>
+      <li>Next: <a href="chap4.html" title="下一章">LwDITA的种类</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, clule.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/chap3.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
